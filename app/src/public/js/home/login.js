@@ -24,5 +24,6 @@ loginBtn.addEventListener("click", () => {
         },
         body: JSON.stringify(req)
     })
-
+    .then((res) => res.json())
+    .then(console.log)
 })
