@@ -15,4 +15,14 @@ loginBtn.addEventListener("click", () => {
         pw: pw.value
     }
     console.log(req)
+    console.log(JSON.stringify(req))
+    
+    fetch("/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/JSON"
+        },
+        body: JSON.stringify(req)
+    })
+
 })
