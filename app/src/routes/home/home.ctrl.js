@@ -10,6 +10,10 @@ const output = {
     login: (req, res) => {
         const viewPath = path.join(__dirname,'..', '..', 'views', 'home', 'login.ejs');
         res.render(viewPath)
+    },
+    register: (req, res) => {
+        const viewPath = path.join(__dirname,'..', '..', 'views', 'home', 'register.ejs');
+        res.render(viewPath)
     }
 }
 
