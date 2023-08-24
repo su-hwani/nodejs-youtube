@@ -7,17 +7,19 @@
 // ex) button -> 버튼 태그, #button -> id="button" 인 태그 
 const id = document.querySelector("#id")
 const pw = document.querySelector("#pw")
+const name = document.querySelector("#name")
+const confirmPw = document.querySelector("#confirm-pw")
 
-const loginBtn = document.querySelector("#button")
-loginBtn.addEventListener("click", () => {
+const registerBtn = document.querySelector("#button")
+registerBtn.addEventListener("click", () => {
     const req = {
         id: id.value,
-        pw: pw.value
+        pw: pw.value,
+        name: name.value,
+        confirmPw: confirmPw.value,
     }
-    console.log(req)
-    console.log(JSON.stringify(req))
-    
-    fetch("/login", {
+
+    fetch("/register", {
         method: "POST",
         headers: {
             "Content-Type": "application/JSON"
@@ -27,11 +29,11 @@ loginBtn.addEventListener("click", () => {
     .then((res) => res.json())
     .then((res) => {
         if (res.success) {
-            location.href = "/"
+            location.href = "/login"
         }else {
             alert(res.msg)
         }
     }).catch((err) => {
-        console.err(new Error("로그인 중 에러 발생"))
+        console.err(new Error("회원가입 중 에러 발생"))
     })
 })
