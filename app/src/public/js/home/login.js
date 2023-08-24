@@ -19,7 +19,7 @@ loginBtn.addEventListener("click", () => {
 
     console.log(req)
     console.log(JSON.stringify(req))
-    console.log("ASD")
+
     
     fetch("/login", {
         method: "POST",
